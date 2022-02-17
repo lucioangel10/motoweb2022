@@ -1,0 +1,36 @@
+@import "../base/mixin";
+@import "../base/variables";
+@import "../base/extends";
+
+
+footer{
+    @extend %footer;
+    #mail{
+        margin: 0px;
+        text-align: end;
+        position: relative;
+        bottom: 35px;
+    }
+    div {
+
+
+        .logo2{
+            margin: 0%;
+            width: 5%;
+        }
+        .logo3{
+            margin: 1%;
+            width: 3%;
+        }
+        .pRedes {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        &:hover {
+            @include transform(translate(20px));
+            color: nth($colores,6);
+        }
+    }
+    
+
+}

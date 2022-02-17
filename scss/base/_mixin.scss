@@ -1,0 +1,11 @@
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -o-transform: $transform;
+    -moz-transform: $transform;
+    transition: all 1s;
+    transform: $transform;
+}
+@mixin position($position){
+    position: relative;
+    top: $position;
+}

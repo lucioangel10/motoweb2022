@@ -1,0 +1,62 @@
+@import "variables";
+@import "listas";
+
+
+%buttomHeader {
+    font-size: $fontMenu;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    margin-bottom:  0.5rem; ;
+    border: solid nth($colores, 4);
+    border-radius: 2rem;
+    padding-right:0.5rem;
+    padding-left: 0.5rem;
+    text-align: center;
+    display: block  ;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: nth($colores, 1);
+}
+
+%imgProducto {
+    width: 18rem;
+    background-image: url("../../multimedia/img/cuadro1.png");
+    background-size: cover;
+}
+%footer {
+    padding: 0rem 1rem 0rem 1rem;
+    font-weight: bold;
+    color: black;
+    background-color: nth($colores, 1);
+    font-family: 'Orbitron', sans-serif;
+}
+%header {
+    width: 100%;
+    background-color: nth($colores, 2);
+    background-size: cover;
+    padding-top: 4rem;
+    z-index: 1;
+    padding-bottom: 1rem;
+}
+
+%titulo{
+    font-size: $font1;
+    font-family: 'Orbitron', sans-serif;
+    color: nth($colores,1);
+    background-color: nth($colores,2);    
+    border-bottom: solid nth($colores,1 );
+    text-align: center;
+}
+%linkMap {
+    font-family: 'Alumni Sans', sans-serif;
+    text-decoration: none;
+    font-size: $font2;
+    color: nth($colores,1);
+}
+%headerMobile {
+    color: nth($colores, 1);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    border-left: solid nth($colores,1);
+    border-right: solid nth($colores,1);
+}

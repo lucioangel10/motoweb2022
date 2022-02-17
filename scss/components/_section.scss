@@ -1,0 +1,248 @@
+@import "../base/mixin";
+@import "../base/variables";
+@import "../base/extends";
+/*MAIN*/
+
+
+.titulo{
+    @extend %titulo;
+}
+.sucursalesContainer{
+    padding-right: 40px;
+}
+.mapaLink{
+   @extend %linkMap;
+   &:hover{
+       @include transform(scale(1.1));
+       color: nth($colores,6 );
+   }
+}
+
+
+div{
+    div{
+        
+        .artChino{
+            height: 500px;
+            
+            margin: 40px 30px;
+            
+            box-shadow:10px 10px 20px  nth($colores,5), -10px -10px 20px  nth($colores,5), 10px -10px 20px  nth($colores,5),-10px 10px 20px  nth($colores,5);
+            &:hover{
+                box-shadow:10px 10px 20px  nth($colores,1), -10px -10px 20px  nth($colores,1), 10px -10px 20px  nth($colores,1),-10px 10px 20px  nth($colores,1);
+                border:10px solid nth($colores,1);
+                @include transform(scale(1.1));
+                color: nth($colores,4 );
+
+            }
+           
+            .h4Chino{
+                margin-bottom: 0%;
+                font-size: $font3;
+                font-family: 'Alumni Sans', sans-serif;
+                margin-left: 13%;               
+            }
+            .imgproducto{
+                width: 18rem;
+                &:hover{
+                    @include transform(scale(1.8));
+                }
+            }
+            .h2Chino{
+                font-family: 'Alumni Sans', sans-serif;
+                margin-left: 13%;
+                font-size: $font2;
+                
+            }
+            /*POSITION POPULARES*/
+            #Tkawa{
+                @include position(95px);
+                
+            }
+            #Tfas{
+                @include position(68px);
+            }
+            #kawaP{
+                @include position(40px);
+            }
+            #fasP{
+                @include position(38px);
+
+            }
+            #Twave{
+                @include position(120px);
+
+            }
+            #waveP{
+                @include position(59px);
+
+            }
+            #Tfz{
+                @include position(128px);
+
+            }
+            #fzP{
+                @include position(65px);
+
+            }
+            #Txtz{
+                @include position(70px);
+
+            }
+            #xtzP{
+                @include position(35px);
+
+            }
+            /*POSITION STREET*/
+            #mtP{
+                @include position(70px);
+
+            }
+            #Tmt{
+                @include position(125px);
+
+            }
+            #Tybr{
+                @include position(85px);
+
+            }
+            #ybrP{
+                @include position(30px);
+
+            }
+            #Tglh{
+                @include position(110px);
+
+            }
+            #glhP{
+                @include position(67px);
+
+            }
+            #Tcb250{
+                @include position(105px);
+
+            }
+            #cb250P{
+                @include position(60px);
+
+            }
+            /*POSITION SCOOTER*/
+            #milP{
+                @include position(60px);
+
+            }
+            #Tmil{
+                @include position(125px);
+
+            }
+            #Tnmx{
+                @include position(120px);
+
+            }
+            #nmxP{
+                @include position(58px);
+
+            }
+            #Tpcx{
+                @include position(-06px);
+
+            }
+            #pcxP{
+                @include position(-10px);
+
+            }
+            
+            
+            #Tzr{
+                @include position(125px);
+
+            }
+            #zrP{
+                @include position(70px);
+
+            }
+
+            /*POSITION ON/OFF*/
+            #Txt{
+                @include position(125px);
+
+            }
+            #xtP{
+                @include position(60px);
+
+            }#Ttor{
+                @include position(90px);
+
+            }
+            #torP{
+                @include position(45px);
+
+            }#Tk150{
+                @include position(65px);
+
+            }
+            #k150P{
+                @include position(25px);
+
+            }#Txr{
+                @include position(111px);
+
+            }
+            #xrP{
+                @include position(54px);
+
+            }
+            /* POSITION CUB*/
+            #Tbli{
+                @include position(90px);
+
+            }
+            #bliP{
+                @include position(40px);
+
+            }
+            #eneP{
+                @include position(-15px);
+
+            }
+            #Tene{
+                @include position(-9px);
+
+            }
+            #Tmir{
+                @include position(-5px);
+
+            }
+            #Tcry{
+                @include position(65px);
+
+            }
+            #cryP{
+                @include position(20px);
+
+            }
+            #Tzb{
+                @include position(118px);
+
+            }
+            #zbP{
+                @include position(50px);
+
+            }
+            /*POSITION ACCESORIOS*/
+            #Tls{
+                @include position(40px);
+            }
+            #lsP{
+                @include position(40px);
+            }
+            #Tde{
+                @include position(102px);
+            }
+            #deP{
+                @include position(60px)
+            }
+        }
+
+    }    
+}

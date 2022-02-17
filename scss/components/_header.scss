@@ -1,0 +1,62 @@
+@import "../base/mixin";
+@import "../base/variables";
+@import "../base/extends";
+/* nestin o anidamiendo*/
+.headerChino {
+    @extend %header;
+    nav {
+        display: flex;
+        justify-content: center;
+        .logo {
+            position: relative;
+            bottom: 20px;
+            &:hover {
+                @include transform(scale(1.2) translateX(10px) translateY(-10px));
+            }            
+        }
+        .nav {
+            li {
+                list-style: none;
+                transform: translateX(-20px);
+                z-index: 990;
+                padding-right: 0px;
+                &:hover > ul {
+                   display: block;
+                   background-color: nth($colores,3);
+                   
+
+                }
+                .enlacesChino {
+                    @extend %buttomHeader;
+                    &:hover {
+                        @include transform(scale(1.2));
+                        background-color: nth($colores, 5);
+                        color: nth($colores,6);
+                    }
+                }
+                ul {
+                    display: none;
+                    position: absolute;
+                    right: -29px;
+                }
+            }
+        }
+    }
+}
+a{
+    text-decoration: none;
+}
+
+.headerMobile {
+    background-color: rgb(20, 19, 19);   
+    width: 100%;
+    div {
+        div {
+            a{
+               @extend %headerMobile 
+            }
+
+        }
+    }
+}
+
