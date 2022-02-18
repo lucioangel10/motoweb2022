@@ -59,12 +59,20 @@ class Moto {
 
 
 // variables
+let exito;
+let exitoEnLS = parseInt(localStorage.getItem('simulaciones'));
+if(exitoEnLS){
+    exito=exitoEnLS
+}else{
+    exito=0
+}
+localStorage.setItem('exito', exito);
 const caracterNum=contarNum(0,9)
 let anticipo;
 const dolar=[215,213,210,226,230,]
 const tazasInteres = [1.25, 1.35, 1.45]
 const motos=[];
-
+const cantidadSimulaciones= document.querySelector('.simulaciones');
 const contenedorMotos = document.querySelector('.contenedor-motos');
 const contenedorTipo=document.querySelector('.contenedor-tipos');
 
@@ -75,6 +83,10 @@ mezclarMotos(motos);
 
 
 mostrarBotones();
+motos.forEach((moto)=>guardarMotos(moto.id, JSON.stringify(moto)));
+
+mostrarSimulaciones();
+
 
 // funciones
 function mostrarBotones(){
@@ -194,14 +206,30 @@ function simularCuotas(moto) {
             pedirAnticipo(moto.precio, moto.marca, moto.nombre);
 
         }
-        if (malAnticipo(anticipo, moto.precio)) {
+        if(moto.dolar===true){
+            if(malAnticipo(anticipo, moto.conversion)) {
+                alert('Su anticípo no es válido.\nLos carácteres disponibles para esta opcion son:\n' + caracterNum.join(", "));
+                continue;
+            }
+        }else if(malAnticipo(anticipo, moto.precio)) {
             alert('Su anticípo no es válido.\nLos carácteres disponibles para esta opcion son:\n' + caracterNum.join(", "));
             continue;
         }
         break;
     }
-    let simulador = new Simulador(moto.precio, anticipo);
+    let simulador;
+    if(moto.dolar===true){
+        simulador = new Simulador(moto.conversion, anticipo);
+
+    }else{
+        simulador = new Simulador(moto.precio, anticipo);
+
+    }
     simulador.mostrar();
+    
+    exito++;
+    contarSimulaciones(exito);
+    mostrarSimulaciones();
 }
 function agregarMotos(array){
 array.push(new Moto('Titan', '460000', 'street', 'honda', 'multimedia/productos/street/ym20.png',1, false),
@@ -229,4 +257,20 @@ new Moto('energy 110', '130000', 'cub', 'corven','multimedia/productos/cub/energ
 new Moto('mirage 110', '128600', 'cub', 'corven','multimedia/productos/cub/mirage-cub_ccexpress.png',10,false),
 new Moto('wave 110', '220000', 'cub', 'honda','multimedia/productos/cub/wave-cub_ccexpress.png',11,false))
 
+}
+
+
+// STORAJE Y JSON
+
+function mostrarSimulaciones(){
+    const simulacionesAlmacenadas=localStorage.getItem('simulaciones')
+    cantidadSimulaciones.textContent= `Ya se han realizaron ${simulacionesAlmacenadas} simulaciones exitozas`;
+}
+function guardarMotos(clave, valor){
+    localStorage.setItem(clave,valor);
+}
+
+
+function contarSimulaciones(cantidad){
+    localStorage.setItem('simulaciones', cantidad)
 }
