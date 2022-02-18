@@ -235,7 +235,7 @@ function agregarMotos(array){
 array.push(new Moto('Titan', '460000', 'street', 'honda', 'multimedia/productos/street/ym20.png',1, false),
 new Moto('cb 250', '690000', 'street', 'honda','multimedia/productos/street/cb250-street_ccexpress.png', 2,false),
 new Moto('glh 150', '315000', 'street', 'honda', 'multimedia/productos/street/glh-street_ccexpress.png',3,false),
-new Moto('mt-03', '1500000', 'street', 'yamaha','multimedia/productos/street/mt03-street_ccexpress.png',4,true),
+new Moto('mt-03', '9500', 'street', 'yamaha','multimedia/productos/street/mt03-street_ccexpress.png',4,true),
 new Moto('fzfi d', '542000', 'street', 'yamaha','multimedia/productos/street/fz-street_ccexpress.png',5,false),
 new Moto('ybr 125', '412000', 'street', 'yamaha','multimedia/productos/street/ybr-calle_ccexpress.png',6,false),
 new Moto('crypton 110', '334600', 'cub', 'yamaha','multimedia/productos/cub/t110-cub_ccexpress.png',7,false),
