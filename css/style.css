@@ -32,7 +32,14 @@
   margin-right: 0.5rem;
   color: #b4da3a;
 }
+.simulaciones{
+  text-align: center;
+}
+.titulo{
+  margin-bottom: 30px;
+  padding: 20px 0px;
 
+}
 footer {
   padding: 0rem 1rem 0rem 1rem;
   font-weight: bold;
