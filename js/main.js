@@ -26,6 +26,7 @@ class Simulador {
         this.resultado3 = this.precio - this.anticipo;
         this.resultado3 = this.resultado3 * tazasInteres[2];
         this.resultado3 = this.resultado3 / 24;
+        (this.resultado3).toFixed();
     }
     async mostrar() {
         
@@ -90,7 +91,7 @@ class Moto {
 
 
 
-
+let dolar=[];
 let exito;
 let exitoEnLS = parseInt(localStorage.getItem('simulaciones'));
 if(exitoEnLS){
@@ -101,7 +102,6 @@ if(exitoEnLS){
 localStorage.setItem('exito', exito);
 const caracterNum=contarNum(0,9)
 let anticipo;
-const dolar=[215,213,210,226,230]
 const tazasInteres = [1.25, 1.35, 1.45]
 const motos=[];
 const cantidadSimulaciones= document.querySelector('.simulaciones');
@@ -287,7 +287,7 @@ new Moto('zb 110', '132000', 'cub', 'zanella','multimedia/productos/cub/zb-cub_c
 new Moto('milano 150', '291000', 'scooter', 'corven','multimedia/productos/scooter/milano_ccexpress.png',13,false),
 new Moto('nm-x 155', '865000', 'scooter', 'yamaha','multimedia/productos/scooter/nmx_ccexpress.png',14,false),
 new Moto('fascino 125', '472600', 'scooter', 'yamaha','multimedia/productos/scooter/fascino_ccexpress.png',15,false),
-new Moto('pcx 150', '770000', 'scooter', 'honda','multimedia/productos/scooter/pcx_ccexpress.png',16,true),
+new Moto('pcx 150', '770000', 'scooter', 'honda','multimedia/productos/scooter/pcx_ccexpress.png',16,false),
 new Moto('exclusive 150', '320000', 'scooter', 'zanella','multimedia/productos/scooter/styler_ccexpress.png',17,false),
 new Moto('zr 115', '404000', 'scooter', 'yamaha','multimedia/productos/scooter/zr115_ccexpress.png',18,false),
 new Moto('xtz 125', '586000', 'on/off', 'yamaha','multimedia/productos/onOff/xtz125-onOff_ccexpress.png',19,false),
@@ -302,9 +302,17 @@ new Moto('mirage 110', '128600', 'cub', 'corven','multimedia/productos/cub/mirag
 new Moto('wave 110', '220000', 'cub', 'honda','multimedia/productos/cub/wave-cub_ccexpress.png',11,false))
 
 }
+//LOCAL API
+const dolarPromise=fetch('./js/dolar.json')
+    .then((res)=>res.json())
+    .then((data)=>{
+        data.forEach((data)=>{
+            dolar.push(data.venta);
+        })
+    });
 
 
-// STORAJE Y JSON
+// STORAJE
 
 function mostrarSimulaciones(){
     const simulacionesAlmacenadas=localStorage.getItem('simulaciones')
